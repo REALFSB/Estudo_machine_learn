@@ -13,9 +13,9 @@ import pickle
 ########################################################################################################################
 
 # Pegando os arquivos
-base_credit = pd.read_csv('credit_data.csv')
-base_census = pd.read_csv("census.csv")
-base_risco_credito = pd.read_csv('risco_credito.csv')
+base_credit = pd.read_csv('Dados/credit_data.csv')
+base_census = pd.read_csv("Dados/census.csv")
+base_risco_credito = pd.read_csv('Dados/risco_credito.csv')
 
 ########################################################################################################################
 
@@ -25,7 +25,7 @@ base_risco_credito = pd.read_csv('risco_credito.csv')
 # base_credit2 = base_credit.drop('age', axis=1)
 
 # Apagando apenas os registros bugados
-# base_credit2 = base_credit.drop(base_credit[base_credit['age'] <= 0].index)
+base_credit2 = base_credit.drop(base_credit[base_credit['age'] <= 0].index)
 
 # Pegando a média das idades
 idade_media = base_credit['age'][base_credit['age'] > 0].mean()
@@ -122,13 +122,13 @@ x_census_treinamento, x_census_teste, y_census_treinamento, y_census_teste = (
 ########################################################################################################################
 
 # Salvando as bases de dados com pickle
-with open('credit.pkl', mode='wb') as f:
+with open('Dados/credit.pkl', mode='wb') as f:
     pickle.dump([x_credit_treinamento, y_credit_treinamento, x_credit_teste, y_credit_teste], f)
 
     # with open('census.pkl', mode='wb') as f:
     pickle.dump([x_census_treinamento, y_census_treinamento, x_census_teste, y_census_teste], f)
 
-with open('risco_credito.pkl', 'wb') as f:
+with open('Dados/risco_credito.pkl', 'wb') as f:
     pickle.dump([x_risco_credito, y_risco_credito], f)
 
 ########################################################################################################################

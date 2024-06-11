@@ -11,7 +11,7 @@ import pickle
 
 ########################################################################################################################
 # Carregamento dos Dados:
-with open('../credit.pkl', 'rb') as f:
+with open('../Dados/credit.pkl', 'rb') as f:
     x_credit_treinamento, y_credit_treinamento, x_credit_teste, y_credit_teste = pickle.load(f)
 
 ########################################################################################################################

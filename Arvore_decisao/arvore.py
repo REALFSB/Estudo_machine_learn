@@ -6,13 +6,13 @@ import pickle
 ########################################################################################################################
 # IMPORTAÇÃO DOS ARQUIVOS
 
-with open('C:\\Users\\batis\\PycharmProjects\\MachineLearn\\risco_credito.pkl', 'rb') as f:
+with open('../Dados/risco_credito.pkl', 'rb') as f:
     x_risco_credito, y_risco_credito = pickle.load(f)
 
-with open('C:\\Users\\batis\\PycharmProjects\\MachineLearn\\credit.pkl', 'rb') as f:
+with open('../Dados/credit.pkl', 'rb') as f:
     x_credit_treinamento, y_credit_treinamento, x_credit_teste, y_credit_teste = pickle.load(f)
 
-with open('C:\\Users\\batis\\PycharmProjects\\MachineLearn\\census.pkl', 'rb') as f:
+with open('../Dados/census.pkl', 'rb') as f:
     x_census_treinamento, y_census_treinamento, x_census_teste, y_census_teste = pickle.load(f)
 
 ########################################################################################################################
