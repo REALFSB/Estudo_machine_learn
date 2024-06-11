@@ -2,7 +2,7 @@ import pickle
 import pandas as pd
 
 ########################################################################################################################
-
+# Carregamento dos Resultados:
 with open('resultado_arvore.pkl', 'rb') as f:
     arvore = pickle.load(f)
 
@@ -22,7 +22,7 @@ with open('resultados_randomforest.pkl', 'rb') as f:
     randomforest = pickle.load(f)
 
 ########################################################################################################################
-
+# Criação do DataFrame:
 resultado = pd.DataFrame({'Arvore': arvore,
                           'Knn': knn,
                           'Logistica': logistica,
@@ -31,7 +31,7 @@ resultado = pd.DataFrame({'Arvore': arvore,
                           'RandomForest': randomforest})
 
 ########################################################################################################################
-
+# Análise dos Resultados:
 print("Todos resultados")
 print(resultado)
 

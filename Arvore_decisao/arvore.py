@@ -65,21 +65,21 @@ census_previsao = arvore_census.predict(x_census_teste)
 
 # Mostra a taxa de acertos
 credit_accuracy = accuracy_score(y_credit_teste, credit_previsao)
-# print(credit_accuracy)
+print(credit_accuracy)
 
 # Mostra a matriz de confusão
 credit_matriz = classification_report(y_credit_teste, credit_previsao)
-# print(credit_matriz)
+print(credit_matriz)
 
 ########################################################################################################################
 
 # Mostra a taxa de acertos
 census_accuracy = accuracy_score(y_census_teste, census_previsao)
-# print(census_accuracy)
+print(census_accuracy)
 
 # Mostra a matriz de confusão
 census_matriz = classification_report(y_census_teste, census_previsao)
-# print(census_matriz)
+print(census_matriz)
 
 ########################################################################################################################
 

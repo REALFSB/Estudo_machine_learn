@@ -10,17 +10,17 @@ import numpy as np
 import pickle
 
 ########################################################################################################################
-
+# Carregamento dos Dados:
 with open('../credit.pkl', 'rb') as f:
     x_credit_treinamento, y_credit_treinamento, x_credit_teste, y_credit_teste = pickle.load(f)
 
 ########################################################################################################################
-
+# Concatenando Dados de Treino e Teste:
 x_credit = np.concatenate((x_credit_treinamento, x_credit_teste), axis=0)
 y_credit = np.concatenate((y_credit_treinamento, y_credit_teste), axis=0)
 
 ########################################################################################################################
-
+# Definição dos Parâmetros para GridSearchCV:
 parametros_arvore = {'criterion': ['gini', 'entropy'],
                      'splitter': ['best', 'random'],
                      'min_samples_split': [2, 5, 10],
@@ -47,6 +47,7 @@ parametros_redes = {'activation': ['relu', 'logistic', 'tahn'],
                     'batch_size': [10, 56]}
 
 ########################################################################################################################
+#GridSearchCV para Encontrar os Melhores Hiperparâmetros:
 
 # Arvore de decisão
 grid_search_arvore = GridSearchCV(estimator=DecisionTreeClassifier(), param_grid=parametros_arvore)
@@ -57,35 +58,35 @@ melhores_resultado_arvore = grid_search_arvore.best_score_
 # Random Forest
 grid_search_randomflorest = GridSearchCV(estimator=RandomForestClassifier(), param_grid=parametros_randomflorest)
 grid_search_randomflorest.fit(x_credit, y_credit)
-melhores_parametros_randomflorest = grid_search_arvore.best_params_
-melhores_resultado_randomflorest = grid_search_arvore.best_score_
+melhores_parametros_randomflorest = grid_search_randomflorest.best_params_
+melhores_resultado_randomflorest = grid_search_randomflorest.best_score_
 
 # KNN
 grid_search_knn = GridSearchCV(estimator=KNeighborsClassifier(), param_grid=parametros_knn)
 grid_search_knn.fit(x_credit, y_credit)
-melhores_parametros_knn = grid_search_arvore.best_params_
-melhores_resultado_knn = grid_search_arvore.best_score_
+melhores_parametros_knn = grid_search_knn.best_params_
+melhores_resultado_knn = grid_search_knn.best_score_
 
 # Regressão Logistica
 grid_search_regressao = GridSearchCV(estimator=LogisticRegression(), param_grid=parametros_regressao)
 grid_search_regressao.fit(x_credit, y_credit)
-melhores_parametros_regressao = grid_search_arvore.best_params_
-melhores_resultado_regressao = grid_search_arvore.best_score_
+melhores_parametros_regressao = grid_search_regressao.best_params_
+melhores_resultado_regressao = grid_search_regressao.best_score_
 
 # SVM
 grid_search_svc = GridSearchCV(estimator=SVC(), param_grid=parametros_svc)
 grid_search_regressao.fit(x_credit, y_credit)
-melhores_parametros_svc = grid_search_arvore.best_params_
-melhores_resultado_svc = grid_search_arvore.best_score_
+melhores_parametros_svc = grid_search_svc.best_params_
+melhores_resultado_svc = grid_search_svc.best_score_
 
 # Redes Neurais
 grid_search_redes = GridSearchCV(estimator=MLPClassifier(), param_grid=parametros_redes)
 grid_search_redes.fit(x_credit, y_credit)
-melhores_parametros_redes = grid_search_arvore.best_params_
-melhores_resultado_redes = grid_search_arvore.best_score_
+melhores_parametros_redes = grid_search_redes.best_params_
+melhores_resultado_redes = grid_search_redes.best_score_
 
 ########################################################################################################################
-
+# Validação Cruzada e Armazenamento dos Resultados:
 resultados_arvore = []
 resultados_randomforest = []
 resultados_knn = []
@@ -148,6 +149,8 @@ for i in range(30):
 
     resultados_redeneural.append(scores.mean())
 
+########################################################################################################################
+
 print(melhores_parametros_arvore)
 print(melhores_resultado_arvore)
 
@@ -168,6 +171,8 @@ print(melhores_resultado_redes)
 
 print("Testes realizados")
 
+########################################################################################################################
+
 with open('resultado_arvore.pkl', mode='wb') as f:
     pickle.dump(resultados_arvore, f)
 
@@ -185,5 +190,7 @@ with open('resultados_svn.pkl', mode='wb') as f:
 
 with open('resultados_redeneural.pkl', mode='wb') as f:
     pickle.dump(resultados_redeneural, f)
+
+########################################################################################################################
 
 print("Codigo finalizado")

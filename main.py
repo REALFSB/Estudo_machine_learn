@@ -122,13 +122,13 @@ x_census_treinamento, x_census_teste, y_census_treinamento, y_census_teste = (
 ########################################################################################################################
 
 # Salvando as bases de dados com pickle
-#with open('credit.pkl', mode='wb') as f:
-#    pickle.dump([x_credit_treinamento, y_credit_treinamento, x_credit_teste, y_credit_teste], f)
+with open('credit.pkl', mode='wb') as f:
+    pickle.dump([x_credit_treinamento, y_credit_treinamento, x_credit_teste, y_credit_teste], f)
 
-#with open('census.pkl', mode='wb') as f:
-#    pickle.dump([x_census_treinamento, y_census_treinamento, x_census_teste, y_census_teste], f)
+    # with open('census.pkl', mode='wb') as f:
+    pickle.dump([x_census_treinamento, y_census_treinamento, x_census_teste, y_census_teste], f)
 
-# with open('risco_credito.pkl', 'wb') as f:
-#    pickle.dump([x_risco_credito, y_risco_credito], f)
+with open('risco_credito.pkl', 'wb') as f:
+    pickle.dump([x_risco_credito, y_risco_credito], f)
 
 ########################################################################################################################
