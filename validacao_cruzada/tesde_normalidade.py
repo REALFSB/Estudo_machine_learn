@@ -5,7 +5,7 @@ import numpy as np
 import pickle
 
 ########################################################################################################################
-
+# Carregamento dos Resultados:
 with open('resultado_arvore.pkl', 'rb') as f:
     arvore = pickle.load(f)
 
@@ -25,10 +25,10 @@ with open('resultados_randomforest.pkl', 'rb') as f:
     randomforest = pickle.load(f)
 
 ########################################################################################################################
-# confiabilidade do teste
+# Definição do Nível de Significância
 alpha = 0.05
 
-# Realizando o teste de Shapiro-Wilk
+# Teste de Normalidade de Shapiro-Wilk:
 print(shapiro(arvore))
 print(shapiro(knn))
 print(shapiro(logistica))
@@ -36,7 +36,8 @@ print(shapiro(svn))
 print(shapiro(rede))
 print(shapiro(randomforest))
 
-# Teste de hipótese com ANOVA e Tukey
+########################################################################################################################
+# Teste ANOVA:
 _, p = f_oneway(arvore, knn, logistica, svn, rede, randomforest)
 
 if p <= alpha:
@@ -44,40 +45,21 @@ if p <= alpha:
 else:
     print("\nHipotese alternativa rejeitada. Dados iguais")
 
+########################################################################################################################
+# Preparação dos Dados para o Teste de Tukey:
 resultados_algoritmo = {'accuracy': np.concatenate([arvore, knn, logistica, svn, rede, randomforest]),
-                        'algoritmo': ['arvore', 'arvore', 'arvore', 'arvore', 'arvore', 'arvore', 'arvore', 'arvore',
-                                      'arvore', 'arvore',
-                                      'arvore', 'arvore', 'arvore', 'arvore', 'arvore', 'arvore', 'arvore', 'arvore',
-                                      'arvore', 'arvore',
-                                      'arvore', 'arvore', 'arvore', 'arvore', 'arvore', 'arvore', 'arvore', 'arvore',
-                                      'arvore', 'arvore',
-                                      'knn', 'knn', 'knn', 'knn', 'knn', 'knn', 'knn', 'knn', 'knn', 'knn',
-                                      'knn', 'knn', 'knn', 'knn', 'knn', 'knn', 'knn', 'knn', 'knn', 'knn',
-                                      'knn', 'knn', 'knn', 'knn', 'knn', 'knn', 'knn', 'knn', 'knn', 'knn',
-                                      'logistica', 'logistica', 'logistica', 'logistica', 'logistica', 'logistica',
-                                      'logistica', 'logistica', 'logistica', 'logistica',
-                                      'logistica', 'logistica', 'logistica', 'logistica', 'logistica', 'logistica',
-                                      'logistica', 'logistica', 'logistica', 'logistica',
-                                      'logistica', 'logistica', 'logistica', 'logistica', 'logistica', 'logistica',
-                                      'logistica', 'logistica', 'logistica', 'logistica',
-                                      'svn', 'svn', 'svn', 'svn', 'svn', 'svn', 'svn', 'svn', 'svn', 'svn',
-                                      'svn', 'svn', 'svn', 'svn', 'svn', 'svn', 'svn', 'svn', 'svn', 'svn',
-                                      'svn', 'svn', 'svn', 'svn', 'svn', 'svn', 'svn', 'svn', 'svn', 'svn',
-                                      'rede', 'rede', 'rede', 'rede', 'rede', 'rede', 'rede', 'rede', 'rede', 'rede',
-                                      'rede', 'rede', 'rede', 'rede', 'rede', 'rede', 'rede', 'rede', 'rede', 'rede',
-                                      'rede', 'rede', 'rede', 'rede', 'rede', 'rede', 'rede', 'rede', 'rede', 'rede',
-                                      'randomforest', 'randomforest', 'randomforest', 'randomforest', 'randomforest',
-                                      'randomforest', 'randomforest', 'randomforest', 'randomforest', 'randomforest',
-                                      'randomforest', 'randomforest', 'randomforest', 'randomforest', 'randomforest',
-                                      'randomforest', 'randomforest', 'randomforest', 'randomforest', 'randomforest',
-                                      'randomforest', 'randomforest', 'randomforest', 'randomforest', 'randomforest',
-                                      'randomforest', 'randomforest', 'randomforest', 'randomforest', 'randomforest']}
+                        'algoritmo': ['arvore'] * 30 +
+                                     ['knn'] * 30 +
+                                     ['logistica'] * 30 +
+                                     ['svn'] * 30 +
+                                     ['rede'] * 30 +
+                                     ['randomforest'] * 30}
 
 resultados_df = pd.DataFrame(resultados_algoritmo)
 
+########################################################################################################################
+# Teste de Comparações Múltiplas de Tukey:
 compara_algoritmos = MultiComparison(resultados_df['accuracy'], resultados_df['algoritmo'])
-
-# Compara todos os grupos
 teste_estatistico = compara_algoritmos.tukeyhsd()
 
 print(teste_estatistico)

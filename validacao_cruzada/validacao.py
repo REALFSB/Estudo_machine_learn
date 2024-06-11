@@ -165,3 +165,25 @@ print(melhores_resultado_svc)
 
 print(melhores_parametros_redes)
 print(melhores_resultado_redes)
+
+print("Testes realizados")
+
+with open('resultado_arvore.pkl', mode='wb') as f:
+    pickle.dump(resultados_arvore, f)
+
+with open('resultados_randomforest.pkl', mode='wb') as f:
+    pickle.dump(resultados_randomforest, f)
+
+with open('resultados_knn.pkl', mode='wb') as f:
+    pickle.dump(resultados_knn, f)
+
+with open('resultados_logistica.pkl', mode='wb') as f:
+    pickle.dump(resultados_logistica, f)
+
+with open('resultados_svn.pkl', mode='wb') as f:
+    pickle.dump(resultados_svn, f)
+
+with open('resultados_redeneural.pkl', mode='wb') as f:
+    pickle.dump(resultados_redeneural, f)
+
+print("Codigo finalizado")
