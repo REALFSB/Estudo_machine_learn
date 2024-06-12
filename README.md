@@ -40,8 +40,23 @@ Este repositório contém códigos e exemplos que eu uso para estudos de Machine
 **3- Avaliação de Algoritmos**
 
 - Matrizes de confusão
-- Métricas de desempenho (precisão, recall, F1-score)
-- Curvas ROC e AUC
+- Verdadeiro Positivo e Falso Positivo
+- Precision e Recall
+- Overfitting e Underfitting
+- Validação Cruzada
+- Tuning dos Parâmetros
+- Variância, Desvio Padrão, Coeficiente de Variação, Distribuição Normal, Teste de Hipóteses
+- Combinação de Classificadores
+- Rejeição de Classificadores
+
+**4- Regressão da Aprendizagem de Maquina**
+
+- Conceitos básicos sobre correlação
+- Regressão linear (simples e múltipla)
+- Regressão polinomial
+- Regressão com árvores de decisão e random forest
+- Regressão com vetores de suporte (SVR)
+- Regressão com redes neurais artificiais
 
 ## Dependências
 
