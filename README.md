@@ -2,6 +2,10 @@
 
 Este repositório contém códigos e exemplos que eu uso para estudos de Machine Learning, abrangendo várias técnicas e algoritmos. O foco é em pré-processamento de dados, diferentes métodos de aprendizagem e avaliação de algoritmos de classificação, utilizando bibliotecas populares como Scikit-learn, pandas, numpy, pickle, matplotlib, seaborn e plotly.
 
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Study%20Repository-blue)
+![Data Science](https://img.shields.io/badge/Data%20Science-Study%20Repository-blue)
+![Data Analysis](https://img.shields.io/badge/Data%20Analysis-Study%20Repository-blue)
+
 ## Conteúdo
 
 **1-  Pré-processamento de dados**
