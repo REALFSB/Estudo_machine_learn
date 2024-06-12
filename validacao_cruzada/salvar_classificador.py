@@ -26,8 +26,9 @@ classficador_arvore = DecisionTreeClassifier(criterion='entropy',   # Critério 
 classficador_arvore.fit(x_credit, y_credit)                        # Ajusta o classificador aos dados
 
 # Treina um classificador SVM (Máquina de Vetores de Suporte)
-classficador_svm = SVC(C=2.0,      # Parâmetro de regularização
-                       kernel='rbf')  # Tipo de kernel RBF (Radial Basis Function)
+classficador_svm = SVC(C=2.0,             # Parâmetro de regularização
+                       kernel='rbf',      # Tipo de kernel RBF (Radial Basis Function)
+                       probability=True)
 classficador_svm.fit(x_credit, y_credit)  # Ajusta o classificador aos dados
 
 # Salva os classificadores treinados em arquivos usando pickle
