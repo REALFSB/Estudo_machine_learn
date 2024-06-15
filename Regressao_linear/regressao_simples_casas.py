@@ -1,8 +1,10 @@
+import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objs as go
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_absolute_error, mean_squared_error
 
 # Carregando a base de dados de preços de casas a partir de um arquivo CSV
 base_casas = pd.read_csv('../Dados/house_prices.csv')
@@ -55,4 +57,16 @@ grafico2.data[0].line.color = 'red'
 grafico3 = go.Figure(data=grafico1.data + grafico2.data)
 
 # Exibindo o gráfico combinado
-grafico3.show()
+#grafico3.show()
+
+# Realizar Previsões nos Dados de Teste:
+previsoes_teste = regressor_simples_casas.predict(x_casas_teste)
+
+# Calcular e Imprimir o Erro Absoluto Médio (MAE):
+print(mean_absolute_error(y_casas_teste, previsoes_teste))
+
+# Calcular e Imprimir o Erro Quadrático Médio (MSE):
+print(mean_squared_error(y_casas_teste, previsoes_teste))
+
+# Calcular e Imprimir a Raiz do Erro Quadrático Médio (RMSE):
+print(np.sqrt(mean_squared_error(y_casas_teste, previsoes_teste)))
