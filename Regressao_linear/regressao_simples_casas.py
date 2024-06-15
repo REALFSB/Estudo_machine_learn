@@ -57,7 +57,7 @@ grafico2.data[0].line.color = 'red'
 grafico3 = go.Figure(data=grafico1.data + grafico2.data)
 
 # Exibindo o gráfico combinado
-#grafico3.show()
+grafico3.show()
 
 # Realizar Previsões nos Dados de Teste:
 previsoes_teste = regressor_simples_casas.predict(x_casas_teste)
