@@ -2,7 +2,6 @@ import pandas as pd
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import LinearRegression
 import plotly.express as px
-import plotly.graph_objs as go
 
 plano_saude = pd.read_csv('../Dados/plano_saude2.csv')
 
