@@ -58,6 +58,12 @@ Este repositório contém códigos e exemplos que eu uso para estudos de Machine
 - Regressão com vetores de suporte (SVR)
 - Regressão com redes neurais artificiais
 
+**5- Regras de Associação e Algoritmos Associativos**
+
+- Introdução teórica sobre as regras de associação e suas principais aplicações
+- Funcionamento do algoritmo Apriori
+- Funcionamento do algoritmo ECLAT
+
 ## Dependências
 
 - [Scikit-learn](https://scikit-learn.org/)
