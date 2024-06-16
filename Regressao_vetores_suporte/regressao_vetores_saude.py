@@ -1,6 +1,4 @@
 import pandas as pd
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.linear_model import LinearRegression
 import plotly.express as px
 from sklearn.svm import SVR
 from sklearn.preprocessing import StandardScaler
