@@ -94,3 +94,5 @@ Este repositório contém códigos e exemplos que eu uso para estudos de Machine
     `pip install seaborn`
 - Plotly:
     `pip install plotly`
+- Apyori:
+    `pip install apyori`
