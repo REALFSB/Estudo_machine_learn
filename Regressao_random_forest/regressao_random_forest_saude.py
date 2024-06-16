@@ -12,14 +12,14 @@ x_plano_saude = plano_saude.iloc[:, 0:1].values
 y_plano_saude = plano_saude.iloc[:, 1].values
 
 # Criação do modelo:
-regressor_random_forest = RandomForestRegressor(n_estimators=10)
+regressor_random_forest_saude = RandomForestRegressor(n_estimators=10)
 
 # Treinamento do modelo:
-regressor_random_forest.fit(x_plano_saude, y_plano_saude)
+regressor_random_forest_saude.fit(x_plano_saude, y_plano_saude)
 
 # Avaliação do modelo:
-print(regressor_random_forest.score(x_plano_saude, y_plano_saude))
+print(regressor_random_forest_saude.score(x_plano_saude, y_plano_saude))
 
 # Previsão:
-previsao = regressor_random_forest.predict([[40]])
+previsao = regressor_random_forest_saude.predict([[40]])
 print(previsao)
