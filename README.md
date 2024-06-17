@@ -64,6 +64,14 @@ Este repositório contém códigos e exemplos que eu uso para estudos de Machine
 - Funcionamento do algoritmo Apriori
 - Funcionamento do algoritmo ECLAT
 
+**6- Agrupamento (Clustering)**
+
+- K-means
+- Agrupamento Hierárquico
+- - Dendrogramas
+- DBSCAN
+- - Escolha dos parâmetros (epsilon e min_samples)
+
 ## Dependências
 
 - [Scikit-learn](https://scikit-learn.org/)
@@ -96,3 +104,5 @@ Este repositório contém códigos e exemplos que eu uso para estudos de Machine
     `pip install plotly`
 - Apyori:
     `pip install apyori`
+- ECLAT:
+    `pip install pyECLAT`
