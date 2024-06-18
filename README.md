@@ -68,9 +68,9 @@ Este repositório contém códigos e exemplos que eu uso para estudos de Machine
 
 - K-means
 - Agrupamento Hierárquico
-- - Dendrogramas
+  - Dendrogramas
 - DBSCAN
-- - Escolha dos parâmetros (epsilon e min_samples)
+  - Escolha dos parâmetros (epsilon e min_samples)
 
 ## Dependências
 
