@@ -1,7 +1,5 @@
 import numpy as np
-from sklearn.datasets import make_blobs
 import plotly.express as px
-import plotly.graph_objects as go
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 import pandas as pd
