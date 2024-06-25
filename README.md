@@ -72,6 +72,16 @@ Este repositório contém códigos e exemplos que eu uso para estudos de Machine
 - DBSCAN
   - Escolha dos parâmetros (epsilon e min_samples)
 
+**7- Técnicas Avançadas em Machine Learning**
+- Aprendizagem por Reforço
+- Processamento de Linguagem Natural
+- Visão Computacional
+- Tratamento de Dados Desbalanceados
+- Seleção de Atributos
+- Redução de Dimensionalidade (PCA, LDA, Kernel PCA)
+- Detecção de Outliers (utilizada para detecção de fraudes)
+- Séries Temporais
+
 ## Dependências
 
 - [Scikit-learn](https://scikit-learn.org/)
