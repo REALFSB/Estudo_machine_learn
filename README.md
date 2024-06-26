@@ -116,3 +116,7 @@ Este repositório contém códigos e exemplos que eu uso para estudos de Machine
     `pip install apyori`
 - ECLAT:
     `pip install pyECLAT`
+- Gym:
+    `pip install gym`
+- IPython:
+    `pip install IPython`
