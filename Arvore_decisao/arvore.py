@@ -1,6 +1,5 @@
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, classification_report
-from sklearn import tree
 import pickle
 
 ########################################################################################################################

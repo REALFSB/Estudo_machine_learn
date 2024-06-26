@@ -1,7 +1,6 @@
 import pickle
 import numpy as np
 
-
 # Carregamento dos Dados:
 with open('../Dados/credit.pkl', 'rb') as f:
     x_credit_treinamento, y_credit_treinamento, x_credit_teste, y_credit_teste = pickle.load(f)
@@ -51,5 +50,3 @@ elif paga == nao_paga:
     print("Empate")
 else:
     print("CLienta nao pagará o emprestimo")
-
-

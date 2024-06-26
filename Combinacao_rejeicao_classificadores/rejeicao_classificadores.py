@@ -71,5 +71,3 @@ elif paga == nao_paga:
     print(f"Empate, baseado em {algoritmos}")
 else:
     print(f"CLienta nao pagará o emprestimo, baseado em {algoritmos}")
-
-

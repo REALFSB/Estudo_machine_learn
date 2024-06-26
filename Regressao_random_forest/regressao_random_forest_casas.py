@@ -31,5 +31,3 @@ print(regressor_random_forest_casas.score(x_casas_teste, y_casas_teste))
 # Previsão dos preços das casas usando os dados de teste
 previsao = regressor_random_forest_casas.predict(x_casas_teste)
 print(previsao)
-
-

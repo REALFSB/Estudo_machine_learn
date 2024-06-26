@@ -22,4 +22,3 @@ novo_registro = novo_registro.reshape(1, -1)
 print("Neural Network Prediction:", rede_neural.predict(novo_registro))
 print("Decision Tree Prediction:", arvore.predict(novo_registro))
 print("SVM Prediction:", svm.predict(novo_registro))
-

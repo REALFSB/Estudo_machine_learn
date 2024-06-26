@@ -1,6 +1,4 @@
-import numpy as np
 import plotly.express as px
-from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 import pandas as pd
 from scipy.cluster.hierarchy import dendrogram, linkage

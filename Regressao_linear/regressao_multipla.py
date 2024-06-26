@@ -8,7 +8,7 @@ base_casas = pd.read_csv('../Dados/house_prices.csv')
 
 # Selecionando as variáveis independentes (features) e a variável dependente (target)
 x_casas = base_casas.iloc[:, 3:19].values  # Variáveis independentes (colunas 3 a 18)
-y_casas = base_casas.iloc[:, 2].values    # Variável dependente (coluna 2)
+y_casas = base_casas.iloc[:, 2].values  # Variável dependente (coluna 2)
 
 # Dividindo os dados em conjuntos de treinamento (70%) e teste (30%)
 x_casas_treinamento, x_casas_teste, y_casas_treinamento, y_casas_teste = train_test_split(
