@@ -82,7 +82,7 @@ Este repositório contém códigos e exemplos que eu uso para estudos de Machine
 - Detecção de Outliers (utilizada para detecção de fraudes)
 - Séries Temporais
 
-## Dependências
+## Dependências Principais
 
 - [Scikit-learn](https://scikit-learn.org/)
 - [Pandas](https://pandas.pydata.org/)
@@ -91,6 +91,26 @@ Este repositório contém códigos e exemplos que eu uso para estudos de Machine
 - [Matplotlib](https://matplotlib.org/)
 - [Seaborn](https://seaborn.pydata.org/)
 - [Plotly](https://plotly.com/)
+- [SciPy](https://plotly.com/)
+- Gym
+- IPython
+
+## Dependências de Modelagem e Aprendizado de Máquina
+
+- DecisionTreeClassifier, DecisionTreeRegressor
+- RandomForestClassifier, RandomForestRegressor
+- KMeans, AgglomerativeClustering, DBSCAN
+- MLPClassifier, MLPRegressor
+- LinearRegression, LogisticRegression
+- SVR, SVC
+- KNeighborsClassifier
+
+## Outras Dependências Específicas
+
+- Apriori
+- ECLAT
+- StatsModels
+- OpenCV
 
 ## Como Utilizar
 1. Clone o repositório para sua máquina local:
@@ -120,3 +140,5 @@ Este repositório contém códigos e exemplos que eu uso para estudos de Machine
     `pip install gym`
 - IPython:
     `pip install IPython`
+- Cv2:
+    `pip install opencv-contrib-python`
